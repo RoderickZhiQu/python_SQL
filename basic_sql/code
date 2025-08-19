@@ -1,0 +1,254 @@
+-- SHOW DATABASES;
+
+-- USE honor_of_kings_db;
+
+-- SELECT DATABASE() AS current_database;
+
+-- CREATE TABLE heroes (
+--     hero_id INT PRIMARY KEY AUTO_INCREMENT,
+--     hero_name VARCHAR(50) NOT NULL,
+--     hero_type VARCHAR(20),
+--     difficulty VARCHAR(10),
+--     release_date DATE,
+--     cost_coins INT,
+--     cost_diamonds INT,
+--     win_rate DECIMAL(5,2),
+--     popularity_rank INT
+-- );
+
+-- CREATE TABLE heroes (
+--     hero_id INT PRIMARY KEY AUTO_INCREMENT,
+--     hero_name VARCHAR(50) NOT NULL,
+--     hero_type VARCHAR(20),
+--     difficulty VARCHAR(10),
+--     release_date DATE,
+--     cost_coins INT,
+--     cost_diamonds INT,
+--     win_rate DECIMAL(5,2),
+--     popularity_rank INT
+-- );
+
+
+-- CREATE TABLE matches (
+--     match_id INT PRIMARY KEY AUTO_INCREMENT,
+--     player_id INT,
+--     hero_id INT,
+--     match_date DATETIME,
+--     match_duration INT, -- in seconds
+--     result VARCHAR(10), -- Win, Loss
+--     kills INT DEFAULT 0,
+--     deaths INT DEFAULT 0,
+--     assists INT DEFAULT 0,
+--     gold_earned INT,
+--     damage_dealt INT,
+--     rank_points_change INT,
+--     FOREIGN KEY (player_id) REFERENCES players(player_id),
+--     FOREIGN KEY (hero_id) REFERENCES heroes(hero_id)
+-- );
+
+-- CREATE TABLE purchases (
+--     purchase_id INT PRIMARY KEY AUTO_INCREMENT,
+--     player_id INT,
+--     item_type VARCHAR(30), -- Skin, Hero, Battle_Pass, Diamonds
+--     item_name VARCHAR(100),
+--     price_usd DECIMAL(10,2),
+--     purchase_date DATETIME,
+--     payment_method VARCHAR(20), -- WeChat_Pay, QQ_Wallet, Credit_Card
+--     FOREIGN KEY (player_id) REFERENCES players(player_id)
+-- );
+
+-- CREATE TABLE regions (
+--     region_id INT PRIMARY KEY AUTO_INCREMENT,
+--     region_name VARCHAR(50),
+--     country VARCHAR(50),
+--     monthly_active_users INT,
+--     revenue_millions_usd DECIMAL(10,2),
+--     avg_session_duration INT -- in minutes
+-- );
+
+-- INSERT INTO regions (region_name, country, monthly_active_users, revenue_millions_usd, avg_session_duration) VALUES
+-- ('China_Mainland', 'China', 133000000, 1480.0, 28),
+-- ('Taiwan', 'Taiwan', 2800000, 72.0, 25),
+-- ('Thailand', 'Thailand', 3200000, 60.0, 23),
+-- ('Malaysia', 'Malaysia', 1500000, 15.0, 22),
+-- ('Indonesia', 'Indonesia', 2100000, 12.0, 20),
+-- ('Philippines', 'Philippines', 1800000, 8.0, 19),
+-- ('United_States', 'United States', 450000, 7.0, 18),
+-- ('Brazil', 'Brazil', 380000, 3.5, 17);
+
+-- INSERT INTO heroes (hero_name, hero_type, difficulty, release_date, cost_coins, cost_diamonds, win_rate, popularity_rank) VALUES
+-- ('Arthur', 'Tank', 'Easy', '2015-11-26', 5800, 288, 52.3, 8),
+-- ('Lu Ban', 'Marksman', 'Easy', '2015-11-26', 5800, 288, 48.7, 12),
+-- ('Angela', 'Support', 'Normal', '2016-03-15', 6888, 288, 51.2, 15),
+-- ('Monkey King', 'Assassin', 'Hard', '2016-01-20', 13888, 588, 49.8, 3),
+-- ('Diao Chan', 'Mage', 'Hard', '2015-12-10', 13888, 588, 47.9, 18),
+-- ('Zhao Yun', 'Fighter', 'Normal', '2015-11-26', 13888, 588, 53.1, 5),
+-- ('Marco Polo', 'Marksman', 'Hard', '2016-08-12', 18888, 788, 46.2, 22),
+-- ('Cai Wenji', 'Support', 'Easy', '2016-05-18', 6888, 388, 55.7, 25),
+-- ('Li Bai', 'Assassin', 'Hard', '2016-02-14', 18888, 788, 44.3, 9),
+-- ('Wang Zhaojun', 'Mage', 'Normal', '2016-01-08', 13888, 588, 50.6, 14);
+
+-- INSERT INTO players (username, email, registration_date, region, level, rank_tier, total_matches, win_rate, vip_level, last_login_date) VALUES
+-- ('DragonKing2024', 'dragon@qq.com', '2023-01-15', 'China_Mainland', 45, 'Diamond', 1250, 67.2, 8, '2024-12-15'),
+-- ('TaiwanPro', 'taiwan@gmail.com', '2023-03-22', 'Taiwan', 38, 'Platinum', 890, 72.1, 5, '2024-12-14'),
+-- ('ThaiWarrior', 'thai@line.me', '2023-06-10', 'Thailand', 42, 'Diamond', 1100, 69.8, 6, '2024-12-15'),
+-- ('MYSGamer', 'mys@outlook.com', '2023-08-05', 'Malaysia', 35, 'Gold', 650, 58.3, 3, '2024-12-13'),
+-- ('IndoLegend', 'indo@gmail.com', '2023-09-12', 'Indonesia', 40, 'Platinum', 950, 65.4, 4, '2024-12-15'),
+-- ('PH_Master', 'ph@yahoo.com', '2023-11-20', 'Philippines', 33, 'Gold', 580, 61.7, 2, '2024-12-12'),
+-- ('USPlayer1', 'us@gmail.com', '2024-01-08', 'United_States', 28, 'Silver', 420, 55.9, 1, '2024-12-10'),
+-- ('BRGamer', 'br@hotmail.com', '2024-02-14', 'Brazil', 31, 'Gold', 380, 59.2, 2, '2024-12-11'),
+-- ('ChinaNoob', 'noob@163.com', '2024-06-01', 'China_Mainland', 15, 'Bronze', 120, 42.5, 0, '2024-12-09'),
+-- ('TW_Casual', 'casual@gmail.com', '2024-04-20', 'Taiwan', 22, 'Silver', 280, 48.9, 1, '2024-12-08');
+
+-- INSERT INTO matches (player_id, hero_id, match_date, match_duration, result, kills, deaths, assists, gold_earned, damage_dealt, rank_points_change) VALUES
+-- (1, 6, '2024-12-15 14:30:00', 1245, 'Win', 8, 2, 12, 12500, 85000, 15),
+-- (1, 4, '2024-12-15 15:45:00', 1890, 'Loss', 5, 7, 8, 10200, 62000, -12),
+-- (2, 2, '2024-12-14 20:15:00', 1456, 'Win', 12, 3, 6, 15800, 95000, 18),
+-- (3, 9, '2024-12-15 16:20:00', 1678, 'Win', 15, 4, 9, 14200, 78000, 20),
+-- (4, 1, '2024-12-13 19:30:00', 1234, 'Loss', 3, 8, 15, 8900, 45000, -8),
+-- (5, 7, '2024-12-15 21:10:00', 1567, 'Win', 10, 2, 7, 13400, 88000, 16),
+-- (6, 8, '2024-12-12 18:45:00', 1123, 'Win', 2, 1, 18, 7800, 25000, 12),
+-- (7, 3, '2024-12-10 15:20:00', 1789, 'Loss', 6, 9, 11, 9600, 52000, -10),
+-- (8, 5, '2024-12-11 17:35:00', 1345, 'Win', 9, 3, 5, 11200, 67000, 14),
+-- (9, 1, '2024-12-09 20:00:00', 1890, 'Loss', 1, 12, 3, 6500, 28000, -5);
+
+-- INSERT INTO purchases (player_id, item_type, item_name, price_usd, purchase_date, payment_method) VALUES
+-- (1, 'Skin', 'Zhao Yun - White Dragon', 15.99, '2024-12-01 10:30:00', 'WeChat_Pay'),
+-- (1, 'Battle_Pass', 'Season 35 Battle Pass', 9.99, '2024-11-15 14:20:00', 'QQ_Wallet'),
+-- (2, 'Hero', 'Marco Polo', 12.99, '2024-12-05 16:45:00', 'Credit_Card'),
+-- (3, 'Skin', 'Li Bai - Millennium Fox', 18.99, '2024-11-28 19:15:00', 'WeChat_Pay'),
+-- (4, 'Diamonds', '3000 Diamonds Pack', 29.99, '2024-12-10 12:00:00', 'Credit_Card'),
+-- (5, 'Skin', 'Diao Chan - Lover', 13.99, '2024-12-08 21:30:00', 'WeChat_Pay'),
+-- (6, 'Hero', 'Wang Zhaojun', 9.99, '2024-12-03 15:45:00', 'QQ_Wallet'),
+-- (7, 'Battle_Pass', 'Season 35 Battle Pass', 9.99, '2024-11-20 11:15:00', 'Credit_Card'),
+-- (8, 'Skin', 'Arthur - Sacred Knight', 11.99, '2024-12-07 18:20:00', 'WeChat_Pay'),
+-- (1, 'Diamonds', '1000 Diamonds Pack', 9.99, '2024-12-12 20:45:00', 'QQ_Wallet');
+
+
+-- SELECT * FROM players;
+
+-- SELECT username, region, level, rank_tier FROM players;
+
+-- SELECT * FROM regions ORDER BY monthly_active_users DESC;
+
+-- SELECT DISTINCT region FROM players;
+-- SELECT DISTINCT hero_type FROM heroes;
+-- SELECT DISTINCT item_type FROM purchases;
+-- SELECT DISTINCT payment_method FROM purchases;
+
+-- SELECT * FROM matches WHERE result = 'Win' AND kills > 10;
+
+-- SELECT * FROM players WHERE (region = 'China_Mainland' AND vip_level > 5) OR rank_tier = 'Diamond';
+
+-- SELECT * FROM heroes ORDER BY win_rate DESC, popularity_rank ASC;
+
+-- UPDATE players SET level = 46, total_matches = 1280 WHERE player_id = 1;
+-- UPDATE heroes SET win_rate = 53.5 WHERE hero_name = 'Zhao Yun';
+-- UPDATE players SET last_login_date = '2024-12-16' WHERE region = 'China_Mainland';
+
+-- INSERT INTO players (username, email, registration_date, region, level) 
+-- VALUES ('TestUser', 'test@test.com', '2024-12-16', 'China_Mainland', 1);
+
+-- DELETE FROM players WHERE username = 'TestUser';
+
+-- CREATE TABLE temp_stats (id INT, stat_value VARCHAR(50));
+-- INSERT INTO temp_stats VALUES (1, 'Test Stat');
+-- TRUNCATE TABLE temp_stats;
+-- DROP TABLE temp_stats;
+
+-- CREATE VIEW player_performance AS
+-- SELECT 
+--     p.username,
+--     p.region,
+--     p.level,
+--     p.rank_tier,
+--     p.win_rate,
+--     p.total_matches,
+--     p.vip_level
+-- FROM players p
+-- WHERE p.level > 20;
+
+-- SELECT * FROM player_performance WHERE region = 'China_Mainland';
+
+-- SELECT * FROM players WHERE email LIKE '%@qq.com';
+
+-- SELECT * FROM regions WHERE country IN ('China', 'Taiwan', 'Thailand');
+
+-- SELECT * FROM players WHERE level BETWEEN 30 AND 45;
+
+-- SELECT 
+--     username AS player_name,
+--     level AS player_level,
+--     win_rate AS winrate_percentage
+-- FROM players;
+
+-- SELECT 
+--     p.username,
+--     p.region,
+--     h.hero_name,
+--     m.result,
+--     m.kills,
+--     m.deaths,
+--     r.revenue_millions_usd
+-- FROM players p
+-- JOIN matches m ON p.player_id = m.player_id
+-- JOIN heroes h ON m.hero_id = h.hero_id
+-- JOIN regions r ON p.region = r.region_name;
+
+-- SELECT username, 'High Level' AS player_type FROM players WHERE level > 40
+-- UNION
+-- SELECT username, 'VIP Player' AS player_type FROM players WHERE vip_level > 5;
+
+-- SELECT * FROM players WHERE email IS NOT NULL;
+
+-- CREATE VIEW player_summary AS
+-- SELECT 
+--     p.username,
+--     p.region,
+--     p.level,
+--     p.rank_tier,
+--     p.win_rate,
+--     COUNT(m.match_id) AS matches_played,
+--     AVG(m.kills) AS avg_kills,
+--     AVG(m.deaths) AS avg_deaths,
+--     SUM(pu.price_usd) AS total_spent
+-- FROM players p
+-- LEFT JOIN matches m ON p.player_id = m.player_id
+-- LEFT JOIN purchases pu ON p.player_id = pu.player_id
+-- GROUP BY p.player_id, p.username, p.region, p.level, p.rank_tier, p.win_rate;
+
+-- SELECT * FROM player_summary WHERE total_spent > 20;
+
+-- SELECT region, AVG(level) AS avg_level_by_region FROM players GROUP BY region;
+
+-- SELECT hero_type, COUNT(*) AS heroes_per_type FROM heroes GROUP BY hero_type;
+
+-- SELECT region, MAX(win_rate) AS best_winrate FROM players GROUP BY region;
+
+-- SELECT region, MIN(win_rate) AS worst_winrate FROM players GROUP BY region;
+
+-- SELECT player_id, SUM(kills) AS total_kills FROM matches GROUP BY player_id;
+
+-- SELECT 
+--     item_type,
+--     COUNT(*) AS purchase_count,
+--     AVG(price_usd) AS avg_price,
+--     SUM(price_usd) AS total_revenue
+-- FROM purchases 
+-- GROUP BY item_type;
+
+-- SELECT region, COUNT(*) AS player_count 
+-- FROM players 
+-- GROUP BY region 
+-- HAVING COUNT(*) > 0;
+
+-- SELECT item_name, LENGTH(item_name) AS item_name_length FROM purchases;
+
+-- SELECT AVG(revenue_millions_usd) AS exact_avg, ROUND(AVG(revenue_millions_usd), 2) AS rounded_avg FROM regions;
+
+-- SELECT NOW() AS current_datetime;
+
+-- SELECT SYSDATE() AS current_system_time;
+
+
+
