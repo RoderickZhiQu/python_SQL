@@ -1,0 +1,56 @@
+[
+  {
+    "language": "TypeScript",
+    "project_count": 16,
+    "total_stars": 217967,
+    "total_forks": 15791
+  },
+  {
+    "language": "Python",
+    "project_count": 10,
+    "total_stars": 1163454,
+    "total_forks": 215025
+  },
+  {
+    "language": "Java",
+    "project_count": 2,
+    "total_stars": 125855,
+    "total_forks": 40364
+  },
+  {
+    "language": "Unknown",
+    "project_count": 2,
+    "total_stars": 81142,
+    "total_forks": 8324
+  },
+  {
+    "language": "Jupyter Notebook",
+    "project_count": 2,
+    "total_stars": 70340,
+    "total_forks": 22385
+  },
+  {
+    "language": "C",
+    "project_count": 2,
+    "total_stars": 21447,
+    "total_forks": 11296
+  },
+  {
+    "language": "Vue",
+    "project_count": 2,
+    "total_stars": 19588,
+    "total_forks": 1445
+  },
+  {
+    "language": "PHP",
+    "project_count": 2,
+    "total_stars": 14783,
+    "total_forks": 1474
+  },
+  {
+    "language": "Shell",
+    "project_count": 2,
+    "total_stars": 13305,
+    "total_forks": 412
+  }
+]

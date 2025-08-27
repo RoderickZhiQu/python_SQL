@@ -1,0 +1,147 @@
+[
+  {
+    "export_timestamp": "2025-08-25 17:35:29.581071",
+    "analysis_summary": {
+      "total_records": 40,
+      "unique_projects": 20,
+      "total_stars_tracked": 1727881,
+      "total_forks_tracked": 316516,
+      "total_daily_stars": 6763,
+      "projects_with_daily_growth": 20
+    },
+    "top_languages": [
+      {
+        "language": "TypeScript",
+        "project_count": 16,
+        "total_stars": 217967,
+        "percentage": 40.0
+      },
+      {
+        "language": "Python",
+        "project_count": 10,
+        "total_stars": 1163454,
+        "percentage": 25.0
+      },
+      {
+        "language": "Java",
+        "project_count": 2,
+        "total_stars": 125855,
+        "percentage": 5.0
+      },
+      {
+        "language": "Unknown",
+        "project_count": 2,
+        "total_stars": 81142,
+        "percentage": 5.0
+      },
+      {
+        "language": "Jupyter Notebook",
+        "project_count": 2,
+        "total_stars": 70340,
+        "percentage": 5.0
+      },
+      {
+        "language": "C",
+        "project_count": 2,
+        "total_stars": 21447,
+        "percentage": 5.0
+      },
+      {
+        "language": "Vue",
+        "project_count": 2,
+        "total_stars": 19588,
+        "percentage": 5.0
+      },
+      {
+        "language": "PHP",
+        "project_count": 2,
+        "total_stars": 14783,
+        "percentage": 5.0
+      },
+      {
+        "language": "Shell",
+        "project_count": 2,
+        "total_stars": 13305,
+        "percentage": 5.0
+      }
+    ],
+    "top_repositories": [
+      {
+        "rank": 1,
+        "full_name": "EbookFoundation/free-programming-books",
+        "language": "Python",
+        "stars": 366227,
+        "forks": 63967
+      },
+      {
+        "rank": 2,
+        "full_name": "yt-dlp/yt-dlp",
+        "language": "Python",
+        "stars": 123834,
+        "forks": 9875
+      },
+      {
+        "rank": 3,
+        "full_name": "django/django",
+        "language": "Python",
+        "stars": 84752,
+        "forks": 32853
+      },
+      {
+        "rank": 4,
+        "full_name": "TheAlgorithms/Java",
+        "language": "Java",
+        "stars": 62941,
+        "forks": 20183
+      },
+      {
+        "rank": 5,
+        "full_name": "GitHubDaily/GitHubDaily",
+        "language": "Unknown",
+        "stars": 40614,
+        "forks": 4163
+      },
+      {
+        "rank": 6,
+        "full_name": "microsoft/ai-agents-for-beginners",
+        "language": "Jupyter Notebook",
+        "stars": 35192,
+        "forks": 11197
+      },
+      {
+        "rank": 7,
+        "full_name": "RSSNext/Folo",
+        "language": "TypeScript",
+        "stars": 32312,
+        "forks": 1496
+      },
+      {
+        "rank": 8,
+        "full_name": "Budibase/budibase",
+        "language": "TypeScript",
+        "stars": 26350,
+        "forks": 1896
+      },
+      {
+        "rank": 9,
+        "full_name": "simstudioai/sim",
+        "language": "TypeScript",
+        "stars": 12022,
+        "forks": 1396
+      },
+      {
+        "rank": 10,
+        "full_name": "midday-ai/midday",
+        "language": "TypeScript",
+        "stars": 11381,
+        "forks": 1031
+      }
+    ],
+    "insights": {
+      "most_popular_language": "TypeScript",
+      "highest_starred_repo": "EbookFoundation/free-programming-books",
+      "average_stars_per_project": 43197,
+      "typescript_dominance": "40.0%"
+    }
+  }
+]
